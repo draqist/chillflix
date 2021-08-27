@@ -1,0 +1,9 @@
+.seriescard{
+    height: 14rem;
+    width: 10rem;
+    border: 1px solid green;
+    margin: 0 .5rem;
+    &:first-child{
+        margin-left: 0;
+    }
+}

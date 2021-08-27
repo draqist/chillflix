@@ -1,0 +1,30 @@
+.main__container{
+    width: 100%;
+    height: 100%;
+}
+.text{
+   text-align: right;
+}
+.movie__container{
+    margin: 0;
+}
+.playlistcontainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    // margin-bottom: 1rem;
+}
+.moviecard{
+    width: 100%;
+    height: 100%;
+    margin: 2rem 0rem .5rem;
+}
+.series{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    justify-content: space-between;
+    &:first-child{
+        margin-left: 0;
+    }
+}
