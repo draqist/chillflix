@@ -10952,6 +10952,11 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
+themoviedb-javascript-library@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/themoviedb-javascript-library/-/themoviedb-javascript-library-3.0.3.tgz#46855f340a29c9fe4fd39e5c40c603ba48651979"
+  integrity sha512-2nts/OdkYlg0UOzE4x/QFYdglMRPJBMJTFf6WnUaACQpZhCUSflBdapyUpSBdmluyaDj+H4f7ZZGaLhqFx3xWA==
+
 throat@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/throat/-/throat-5.0.0.tgz#c5199235803aad18754a667d659b5e72ce16764b"

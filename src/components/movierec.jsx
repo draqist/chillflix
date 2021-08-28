@@ -1,8 +1,11 @@
 import React from 'react';
 import './movierec.scss'
-const MovieRec = () => {
+const MovieRec = ({name}) => {
     return (
-        <div className = 'moviereccard'/>
+        <div>
+            <h4> { name }</h4>
+            <div className='moviereccard'/>
+        </div>
      );
 }
  
