@@ -1,0 +1,17 @@
+.main__container{
+    max-width: 100%;
+}
+.container{
+    width:100%;
+}
+.categories{
+    margin: 1rem 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+.card-container{
+    display: flex;
+    // grid-template-columns:1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

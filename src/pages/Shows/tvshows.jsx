@@ -1,8 +1,8 @@
 import React from 'react';
-import ImageMain from '../components/imagemain'
+import ImageMain from '../../components/ImageMain/imagemain'
 import './tvshows.scss'
-import {  } from '../constants/constants'
-import MovieRec1 from '../components/movierec1';
+import {  } from '../../constants/constants'
+import MovieRec1 from '../../components/MovieRec1/movierec1';
 
 function TvShows () {
     return (
@@ -20,10 +20,6 @@ function TvShows () {
                     <h5> Useful  Information is an information determined to be useful by the user or the manufacturer. They are the guidlines containing the do and dont's constituting an establishment.
                     </h5>
                     <div className='card-container'>
-                        <MovieRec1/>
-                        <MovieRec1/>
-                        <MovieRec1/>
-                        <MovieRec1/>
                         <MovieRec1/>
                         <MovieRec1/>
                         <MovieRec1/>

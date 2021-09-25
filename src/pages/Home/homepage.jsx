@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import MovieCard from '../components/moviecard';
-import ImageSlider from '../components/imageslider'
-import PlaylistCard from '../components/playlistcard';
+import MovieCard from '../../components/MovieCard/moviecard';
+import ImageSlider from '../../components/ImageSlider/imageslider'
+import PlaylistCard from '../../components/Playlist/playlistcard';
 import './homepage.scss'
-import SeriesCard from '../components/seriescard';
-import MovieRec from '../components/movierec';
-import { Movierectext, Movietext, Playlisttext } from '../constants/constants'
+import SeriesCard from '../../components/Series/seriescard';
+import MovieRec from '../../components/MovieRec/movierec';
+import { Movierectext, Movietext, Playlisttext } from '../../constants/constants'
 
 
 
@@ -14,14 +14,14 @@ function Homepage () {
     const [shows, setShows] = useState([])
 
     const movieGenreFetcher = () => {
-        fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US')
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1')
             .then(res => res.json())
-            .then(json => setGenre(json.genres))
+            .then(json => setGenre(json.results))
     }
     const seriesGenreFetcher = () => {
-        fetch('https://api.themoviedb.org/3/genre/tv/list?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US')
+        fetch('https://api.themoviedb.org/3/tv/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1&language=en-US')
             .then(resp => resp.json())
-            .then(newjson => setShows(newjson.genres))
+            .then(newjson => setShows(newjson.results))
     }
     useEffect(() => movieGenreFetcher(), [])
     useEffect(() => seriesGenreFetcher(), [])
@@ -48,7 +48,7 @@ function Homepage () {
                 <Movietext />
                 <div className = 'tvshows'>
                     {
-                        shows.map((s) => (<SeriesCard  key = {s.id.toString()} name = {s.name} />) )
+                        shows.map((s) => (<SeriesCard  key = {s.id.toString()} name = {s.name} imageUrl = {s.poster_path} />) )
                     }
                 </div>
             </div>
@@ -56,11 +56,8 @@ function Homepage () {
                 <Movierectext />
                 <div className='series'>
                     {
-                        genre.map((e) => (<MovieRec key = {e.id.toString()} name = {e.name} />) )
+                        genre.map((e) => (<MovieRec key = {e.id.toString()} name = {e.title} imageUrl = {e.poster_path} />) )
                     }
-                    {/* <MovieRec />
-                    <MovieRec /> 
-                    <MovieRec /> */}
                 </div>
             </div>
         </div>

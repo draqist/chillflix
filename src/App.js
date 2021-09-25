@@ -1,6 +1,6 @@
-import Homepage from './pages/homepage';
+import Homepage from './pages/Home/homepage';
 import './App.scss';
-// import TvShows from './pages/tvshows';
+// import TvShows from './pages/Shows/tvshows';
 
 
 function App() {
