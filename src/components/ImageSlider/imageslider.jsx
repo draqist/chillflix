@@ -3,7 +3,7 @@ import './imageslider.scss'
 
 function ImageSlider (props) {
     return (
-        <div className = 'img_container' />
+        <div  className = 'img_container' />
     );
 }
 

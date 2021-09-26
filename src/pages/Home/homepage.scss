@@ -1,9 +1,13 @@
-.main__container{}  
+.main__container{
+    margin: 0 1rem 0;
+}  
 .text{
    text-align: right;
 }
 .movie__container{
-    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: space-between;
 }
 .playlistcontainer{
     width: 100%;
@@ -24,7 +28,7 @@
 }
 .tvshows{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
     margin-bottom: 1rem;
     justify-content: space-between;
 }

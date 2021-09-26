@@ -5,6 +5,17 @@
     grid-template-columns: 4fr 1fr;
 }
 .movietext{
+    color:white;
     display: grid;
     grid-template-columns: 4fr 1fr;
+    margin-top: 0rem;
+    h3{
+        font-size: 20px;
+        font-weight: 900;
+    }
+}
+h3{
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
 }

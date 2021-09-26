@@ -48,7 +48,7 @@ function Homepage () {
                 <Movietext />
                 <div className = 'tvshows'>
                     {
-                        shows.map((s) => (<SeriesCard  key = {s.id.toString()} name = {s.name} imageUrl = {s.poster_path} />) )
+                        shows.filter((s, idx) => idx < 16).map((s) => (<SeriesCard  key = {s.id.toString()} name = {s.name} imageUrl = {s.poster_path} />) )
                     }
                 </div>
             </div>
