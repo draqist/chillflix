@@ -1,0 +1,19 @@
+.search-field{
+    margin: 0 1rem 0;
+    justify-content: center;
+    align-items: center;
+}
+.search{
+    border-radius: 2rem;
+    height: 2.5rem;
+    width: 100%;
+    margin: 0.5rem 0 1.5rem;
+    padding-right:1rem;
+    padding-left: 1rem;
+    justify-content: center;
+    outline: none;
+    display: inline-block;
+    font-size: 15px;
+    color: red;
+    cursor: text;
+}
