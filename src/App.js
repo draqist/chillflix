@@ -7,6 +7,7 @@ import { Switch, Route,  Router } from 'react-router';
 // import TvShows from './pages/Shows/tvshows';
 
 import { getAnalytics } from "firebase/analytics";
+import SearchResults from './pages/SearchResults/searchresults';
 
 const firebaseConfig = {
 apiKey: "AIzaSyBwefyWmOefbTPFsK_v9C4x-9aJkwczdOo",
@@ -28,13 +29,14 @@ function App() {
           <main className='main__body'>
               <Header />
               <Switch>
-                <Route path = '/'>
+                <Route exact path = '/'>
                   <SearchBox/>
                   <Homepage />
                 </Route>
+            <Route path = '/search'>
+              <SearchResults/>
+            </Route>
                 {/* <Route>
-                </Route>
-                <Route>
                 </Route> */}
             </Switch>
             {/* <TvShows /> */}

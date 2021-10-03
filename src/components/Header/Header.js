@@ -5,7 +5,6 @@ import './Header.scss'
 const Header = () => {
     return (
         <main className = 'header'> 
-            <div className = 'nav-container'>
                 <nav className = 'nav-1'>
                     <ul>
                         <li>
@@ -25,7 +24,6 @@ const Header = () => {
                         </li>
                     </ul>
                 </nav>
-            </div>
         </main>
     )
 }
