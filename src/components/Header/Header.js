@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
     return (
         <main>
-            <header className = 'nav-container'>
+            <div className = 'nav-container'>
                 <nav className = 'nav-1'>
                     <ul>
                         <li>
@@ -19,22 +19,12 @@ const Header = () => {
                         <li>
                             <Link to = '/'> People </Link>
                         </li>
-                    </ul>
-                </nav>
-                <nav className = 'nav-2'>
-                    <ul>
                         <li>
-                            <Link to='/'>Login</Link >
-                        </li>
-                        <li>
-                            <Link to='/'>Join Us!</Link >
-                        </li>
-                        <li>
-                            <Link to='/'></Link >
+                            <Link to = '/'> Login </Link>
                         </li>
                     </ul>
                 </nav>
-            </header>
+            </div>
         </main>
     )
 }

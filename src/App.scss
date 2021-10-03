@@ -3,7 +3,7 @@
     font-family: "Montserrat", sans-serif;
 }
 .main__body{
-    padding: 2rem 2rem 1rem;
+    padding: 1rem 2rem 1rem;
 }
 a{
     text-decoration: none;
@@ -11,4 +11,9 @@ a{
 }
 li{
     list-style: none;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
