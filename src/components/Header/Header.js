@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Header.scss'
 
 const Header = () => {
     return (
-        <main>
+        <main className = 'header'> 
             <div className = 'nav-container'>
                 <nav className = 'nav-1'>
                     <ul>

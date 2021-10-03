@@ -1,0 +1,8 @@
+.resultsContainer{
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    justify-content: space-between;
+}
+.searchstats{
+    display: flex;
+}
