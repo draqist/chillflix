@@ -1,9 +1,15 @@
 .resultsContainer{
     display: grid;
-    grid-template-columns: 3fr 7fr;
+    grid-template-columns: 2fr 8fr;
     justify-content: space-between;
     margin: 4rem 0 2rem;
 }
 .searchstats{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5rem;
+}
+.search-results{
+    padding: 0 2.5rem;
 }
