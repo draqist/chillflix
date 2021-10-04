@@ -5,10 +5,11 @@ import './Header.scss'
 const Header = () => {
     return (
         <main className = 'header'> 
-                <nav className = 'nav-1'>
+            <nav className='nav-1'>
+                <span> ChillfliX </span>
                     <ul className = 'header-ul'>
                         <li>
-                            <Link to = '/'>Home</Link>
+                            <Link to = '/search'>Home</Link>
                         </li>
                         <li>
                             <Link to = '/'> Movies</Link>

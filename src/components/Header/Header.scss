@@ -1,11 +1,29 @@
 .header{
-    height: 3.5rem;
+    display: flex;
+    height: 3rem;
     background-color: white;
     align-items: center;
 }
-
-.header-ul{
+.nav-1{
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-self: center;
+    span{
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #eb5b28;
+    }
+}
+.header-ul{
+    display: flex;
+    // justify-content: space-between;
+    li{
+        display: inline-flex;
+        padding: 0 2rem;
+    }
 }

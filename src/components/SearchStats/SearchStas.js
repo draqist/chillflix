@@ -3,7 +3,6 @@ import  './searchstats.scss'
 
 const StasContainer = () => {
     return (
-        <>
             <div className='statscontainer'>
                 <div className = 'res-head'>
                     <h3 className = 'search-title'> Search Results </h3>
@@ -53,8 +52,7 @@ const StasContainer = () => {
                         </li>
                     </div>
                 </ul>
-            </div> 
-        </>
+            </div>
     )
 }
 

@@ -2,10 +2,24 @@
     width: 16rem;
     height: 23rem;
     border:2px solid green;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 0.2rem  yellow;
 }
 .res-head{
+    border-top-right-radius: 0.6rem;
+    border-top-left-radius: 0.6rem;
     height: 4rem;
     background-color: yellowgreen;
+    margin-bottom: 0.5rem;
+        h3{
+            display: flex;
+            margin: 0;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            font-weight: 600;
+            padding: 20px;
+        }
 }
 .search-title{
     padding-left: 1.5rem;
@@ -13,12 +27,26 @@
 .stats-ul{
      margin: 0 ;
      padding: 0;
-     justify-content: space-evenly;
 }
 .res_cat {
     width: 100%;
     height:2.625rem;
     justify-content: center;
     align-items: center;
-    padding-left: 1.5rem;
+    li{
+        display: flex;
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+    span{
+        display: inline-flex;
+        padding: 0  10px;
+        align-items: center;
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+    a{
+        font-weight: 600;
+        // text-overflow: ;
+    }
 }
