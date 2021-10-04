@@ -1,8 +1,13 @@
 .main__container{
-    margin: 0 1rem 0;
+    padding: 0 1.5rem
 }  
 .text{
    text-align: right;
+}
+.container{
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    justify-content: space-between;
 }
 .movie__container{
     display: grid;
