@@ -21,7 +21,7 @@ const Header = () => {
                             <Link to = '/'> People </Link>
                         </li>
                         <li>
-                            <Link to = '/'> Login </Link>
+                            <Link to = '/auth1'> Login </Link>
                         </li>
                     </ul>
                 </nav>

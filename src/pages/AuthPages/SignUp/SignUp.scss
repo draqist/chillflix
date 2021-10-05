@@ -1,8 +1,10 @@
 .signup{
+    padding: 4rem 0;
+    color: white;
+}
+.signUp-container{
     display: flex ;
     padding: 0 2rem;
-    margin: 4rem 0;
-    color: white;
 }
 .terms{
     width: 16.125rem ;
@@ -56,9 +58,8 @@
 .sign-li{
     li{
     margin: 0;
-    width: 100%;
-    padding: 10px 20px;
-    font-size: 1em;
+    font-size: 1rem;
+    padding: 1rem 20px;
     line-height: 1.4rem;
     white-space: normal;
 
@@ -70,6 +71,14 @@
     padding: 10px 25px;
     border-radius: 0.6rem;
     font-size: 1rem;
+    font-weight: 600;
     margin: 1rem 0;
     display: inline-block;
+}
+.term-agr{
+    span{
+        color: #eb5b28;
+        font-weight: 500;
+        letter-spacing: 2pt;
+    }
 }
