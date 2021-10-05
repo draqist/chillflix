@@ -4,10 +4,11 @@ import { initializeApp } from "firebase/app";
 import SearchBox from './components/SearchBox/SearchBox';
 import Header from './components/Header/Header';
 import { Switch, Route,  Router } from 'react-router';
-// import TvShows from './pages/Shows/tvshows';
+import TvShows from './pages/Shows/tvshows';
 
 import { getAnalytics } from "firebase/analytics";
 import SearchResults from './pages/SearchResults/searchresults';
+import SignUp from './pages/AuthPages/SignUp/SignUp';
 
 const firebaseConfig = {
 apiKey: "AIzaSyBwefyWmOefbTPFsK_v9C4x-9aJkwczdOo",
@@ -36,10 +37,13 @@ function App() {
             <Route path = '/search'>
               <SearchResults/>
             </Route>
-                {/* <Route>
-                </Route> */}
+            <Route path = '/shows'>
+              <TvShows />
+            </Route>
+            <Route path = '/auth1'>
+              <SignUp />
+            </Route>
             </Switch>
-            {/* <TvShows /> */}
           </main>
         </div>
     </>

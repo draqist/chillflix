@@ -9,13 +9,13 @@ const Header = () => {
                 <span> ChillfliX </span>
                     <ul className = 'header-ul'>
                         <li>
-                            <Link to = '/search'>Home</Link>
+                            <Link to = '/'>Home</Link>
                         </li>
                         <li>
-                            <Link to = '/'> Movies</Link>
+                            <Link to = '/search'> Movies</Link>
                         </li>
                         <li>
-                            <Link to = '/'> TV Shows</Link>
+                            <Link to = '/shows'> TV Shows</Link>
                         </li>
                         <li>
                             <Link to = '/'> People </Link>

@@ -1,22 +1,68 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './SignUp.scss'
 
-const SignUp = () => {
-    return (
-        <>
-            <main>
-                <div className = 'terms'>
-
-                </div>
-                <div className='AuthForms'>
-                    <form>
-                        <label for = 'Username' > Username</label>
-                            <input type = 'text' />
-                    </form>
-                </div>
-            </main>
-        </>
-    )
-}
+const SignUp = () => (
+    <div className='signup'>
+        <div className='terms'>
+            <div className='sign-li-1'>
+                <h3> Benefits of being a member</h3>
+            </div>
+            <div className='sign-ul'>
+                <ul>
+                    <div className='sign-li'>
+                        <li> Find something to watch on your subscribed streaming services</li>
+                    </div>
+                    <div className='sign-li'>
+                        <li>Log the movies and TV shows you have watched</li>
+                    </div>
+                    <div className='sign-li'>
+                        <li>Keep track of your favourite movies and Tv shows and get recommendations from them</li>
+                    </div>
+                    <div className='sign-li'>
+                        <li>Build and maintain a personal watchlist</li>
+                    </div>
+                    <div className='sign-li'>
+                        <li>Build custom mixed lists (Movies and Shows)</li>
+                    </div>
+                    <div className='sign-li'>
+                        <li>Take part in movie and TV discussions</li>
+                    </div>
+                    <div className='sign-li'>
+                        <li>Contribute to, and improve the information in our database</li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <section className='AuthForms'>
+            <h2> Sign up for an account </h2>
+            <span> Signing up for an account is free and easy, Fill out the form below to get started.</span>
+            <div className='auth1form'>
+                <h4>
+                    Username
+                </h4>
+                <input type='text' />
+                <h4>
+                    Password (4 characters minimum)
+                </h4>
+                <input type='password' />
+                <h4>
+                    Confirm Password
+                </h4>
+                <input type='password' />
+                <h4>
+                    Email
+                </h4>
+                <input type='email' />
+            </div>
+            <p>
+                By clicking the "Sign Up" button below, I certify that i have read and agreed to the <span> ChillfliX </span> terms of use and privacy policy.
+            </p>
+            <span className='btn-sign'>
+                <Link to='/'> Sign Up </Link>
+            </span>
+        </section>
+    </div>
+)
 
 export default SignUp

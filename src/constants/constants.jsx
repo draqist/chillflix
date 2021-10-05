@@ -18,7 +18,7 @@ export const Movietext = () => {
 }
 export const Movierectext = () => {
     return(
-    <div className="container">
+    <div className="container-1">
         <h3> Popular Movies</h3>
     </div>
     )

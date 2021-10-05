@@ -7,7 +7,7 @@ import MovieRec1 from '../../components/MovieRec1/movierec1';
 function TvShows () {
     return (
         <div className= 'main__container'>
-            <div className='container'>
+            <div className='container-2'>
                 <ImageMain />
             </div>
 
