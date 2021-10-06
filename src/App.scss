@@ -1,5 +1,5 @@
 .main{
-    background-color: #252422;
+    background-color: #21263A;
     font-family: "Montserrat", sans-serif;
 }
 a{
@@ -26,4 +26,7 @@ li{
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a8bbbf;
+}
+:root{
+  --bg-clr: #232B42;
 }
