@@ -1,14 +1,15 @@
 .container1{
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    // height: 100%;
+    display: flex;
+    // flex-wrap: wrap;
+    justify-content: space-between;
     margin:0.25rem rem;
     background-color: rgb(5, 100, 72);
-    width: 19rem;
+    width: 20rem;
     color: white;
+    height: 4rem;
 }
 .img-container{
-    width: 4rem;
+    width: 6rem;
     background-color: rgb(131, 80, 80);
    
 }
