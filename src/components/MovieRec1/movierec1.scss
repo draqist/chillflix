@@ -1,6 +1,24 @@
 .movierec-card{
-    height: 13rem;
-    width: 10rem;
+    width: 12rem;
+    height: 2.7rem;
     border: 1px solid green;
-    margin: 0 0 1.5rem;
+    margin-right: 1rem;
+    display: flex;
+    margin-bottom: .7rem;
+    text-align: right;  
+    justify-content: space-between;
+    span{
+        font-size: .8rem;
+    }
+
+}
+.ser_image{
+    width: 2rem;
+    border: 1px solid yellow;
+    height: 2.7rem;
+}
+.ser_text{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin-right: .5rem;
 }
