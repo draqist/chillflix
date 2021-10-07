@@ -1,17 +1,31 @@
-.main__container{
+.mainz__container{
     max-width: 100%;
+    display: flex;
+    padding: 3rem 2rem 4rem;
+    h2{
+        margin: 0; 
+        padding-top: 0.6rem;
+    }
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        padding: 0.5rem;
+    }    
 }
 .container-2{
-    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
 }
 .categories{
-    margin: 1rem 0 1rem;
     display: grid;
     grid-template-columns: 1fr 4fr;
 }
 .card-container{
     display: flex;
-    // grid-template-columns:1fr 1fr 1fr 1fr;
-    justify-content: space-between;
+    align-content: space-between;
     flex-wrap: wrap;
 }
