@@ -69,7 +69,7 @@ function Homepage () {
                         <Movierectext />
                         <div className='series'>
                             {
-                                genre.map((e) => (<MovieRec key = {e.id.toString()} name = {e.title} imageUrl = {e.poster_path} />) )
+                                genre.map((e) => <MovieRec key = {e.id.toString()} name = {e.title} imageUrl = {e.poster_path} /> )
                             }
                         </div>
                     </div>
