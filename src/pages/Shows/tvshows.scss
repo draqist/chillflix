@@ -1,35 +1,26 @@
 .mainz__container{
     max-width: 100%;
     padding: 3rem 2rem 4rem;
-    h2{
-        margin: 0; 
-        padding-top: 0.6rem;
-    }
-    ul{
-        margin: 0;
-        padding: 0;
-    }
-    li{
-        padding: 0.5rem;
-    }    
 }
 .container-2{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
 }
 .categories{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
     .series__no{
-        width: 100%;
+        // width: 100%;
         margin: 0 .8rem;
-        flex-grow: 1;
     }
     .series__info{
         // width: 100%;
+        text-align: justify;
         margin: 0 1rem;
         // justify-content: center;
-        flex-grow: 2;
+        // flex-grow: 2;
     }
 }
 .card-container{

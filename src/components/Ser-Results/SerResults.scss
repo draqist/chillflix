@@ -1,10 +1,14 @@
 .ser__results{
-    width: 100%;
+    max-width: 100%;
     display: flex;
-    padding: 0 0 .8rem;
+    margin: 0 0 .8rem;
+    height: 19rem;
+    background-color: green;
+    padding: 0 2rem;
+    overflow: none;
     h2{
-        margin: 0; 
-        padding-top: 0.6rem;
+        // margin: 0; 
+        // padding-top: 0.6rem;
     }
     ul{
         margin: 0;

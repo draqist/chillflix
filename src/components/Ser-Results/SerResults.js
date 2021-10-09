@@ -12,7 +12,7 @@ const SerResults = ({img, details, name }) => {
             </div>
             <div className='categories'>
                 <div className="series__no">
-                    <h2> No of Seasons </h2>
+                    <h3> No of Seasons </h3>
                     <ul>
                         <li>cd</li>
                         <li>ab</li>
