@@ -14,7 +14,7 @@ function TvShows() {
     return (
         <div className='mainz__container'>
             {
-                series.map(ser => <SerResults key = {ser.id.toString()} img = {ser.poster_path} details = {ser.overview} name = {ser.name} />)
+                series.map(ser => <SerResults key = {ser.id.toString()} img = {ser.poster_path} details = {ser.overview} bckdrop = {ser.backdrop_path} name = {ser.name} date = {ser.first_air_date} />)
             }
         </div>
     );
