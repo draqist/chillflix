@@ -2,7 +2,7 @@ import React from 'react';
 import './movierec.scss'
 const MovieRec = ({name, imageUrl}) => {
     return (
-        <div className = 'movie-card'>
+        <div className = 'shadow-3dp movie-card'>
             <div className = 'm-img'>
                 <img src={"https://image.tmdb.org/t/p/w500/" + imageUrl} className='moviereccard' alt= ''/>
             </div>

@@ -7,7 +7,7 @@ import SeriesDetails from '../MovieRec1/movierec1'
 const SerResults = ({img, bckdrop, details, name, date }) => {
     return (
         <div className='ser__results'>
-            <img src = {"https://image.tmdb.org/t/p/w500/" + bckdrop } className = 'bg-im' alt='/' />
+            {/* <img src = {"https://image.tmdb.org/t/p/w500/" + bckdrop } className = 'bg-im' alt='/' /> */}
             <div className='container-2'>
                 <ImageMain image={img}/>
             </div>

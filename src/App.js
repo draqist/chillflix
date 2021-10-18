@@ -3,7 +3,7 @@ import './App.scss';
 import { initializeApp } from "firebase/app";
 import SearchBox from './components/SearchBox/SearchBox';
 import Header from './components/Header/Header';
-import { Switch, Route,  Router } from 'react-router';
+import { Switch, Route} from 'react-router';
 import TvShows from './pages/Shows/tvshows';
 
 import { getAnalytics } from "firebase/analytics";

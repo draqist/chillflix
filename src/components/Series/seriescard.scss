@@ -1,17 +1,33 @@
-.ser__container{
+.ser__container {
     margin-top: .2rem;
     font-size: 0.85rem;
     text-align: center;
     border-radius: 0.5rem;
-    border: 3px solid #ccc5b9;
+    border: 3px solid #b9b9b9;
     width: 12.8rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;    
+    margin-right: .8rem;
     background-color: #fffcf2;
-    color: #eb5b28;
+    color: orange;
+    a{
+        color: orange;
+        font-weight: 500;
+    }
+    h4 {
+        padding: 0;
+        // margin: 0;
+}
+.shadow-3dp {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
+
 }
 .seriescard{
     width: 12.8rem;
-}
-img {
-    border-radius: 0.4rem;
+    // padding: 1rem;
+    img {
+        border-radius: 0.4rem;
+        width: 12.8rem;
+        height: 19.2rem;
+    }
 }

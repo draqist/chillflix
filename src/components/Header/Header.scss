@@ -1,8 +1,12 @@
+.shadow-4dp {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
 .header{
     display: flex;
     height: 3rem;
-    background-color: white;
+    background-color: #272727;
     align-items: center;
+    margin-bottom: 2rem;
 }
 .nav-1{
     width: 100%;
@@ -15,18 +19,31 @@
         align-items: center;
         padding: 0 2rem;
         font-size: 35px;
-        font-weight: 600;
-        // color: #eb5b28;
-        
-        font-family: "Akronim", cursive;
-        // letter-spacing: 0.5rem;
+        font-weight: 900;
+        font-style: italic;
+        font-family: "Saira", cursive;
+        text-transform: uppercase;
+        color: white;
+        font-size: 1.5rem;
+        .fiery{
+            color: orange;
+            font-size: 2.5rem;
+            padding: 0;
+            display: flex;
+            align-items: center;
+
+        }
     }
 }
 .header-ul{
     display: flex;
-    // justify-content: space-between;
+    align-items: center;
     li{
         display: inline-flex;
         padding: 0 2rem;
+        a{
+            color: #e1e1e1;
+            font-weight: bold;
+        }
     }
 }

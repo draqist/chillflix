@@ -4,9 +4,9 @@ import './Header.scss'
 
 const Header = () => {
     return (
-        <main className = 'header'> 
+        <main className = 'header shadow-4dp'> 
             <nav className='nav-1'>
-                <span> ChillfliX </span>
+                <span> Chillfli<span className = 'fiery'>X</span> </span>
                     <ul className = 'header-ul'>
                         <li>
                             <Link to = '/'>Home</Link>

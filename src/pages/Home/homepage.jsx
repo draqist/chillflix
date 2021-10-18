@@ -18,6 +18,8 @@ function Homepage () {
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1')
             .then(res => res.json())
             .then(json => setGenre(json.results))
+            
+            
     }
     const seriesGenreFetcher = () => {
         fetch('https://api.themoviedb.org/3/tv/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1&language=en-US')
