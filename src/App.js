@@ -20,7 +20,9 @@ appId: "1:380434459533:web:11bc57771925793c0febc4",
 measurementId: "G-S2YQ7ZJH6K"
 };
 const app = initializeApp(firebaseConfig);
+//eslint-disable-next-line
 const analytics = getAnalytics(app);
+
 
 
 function App() {

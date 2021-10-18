@@ -4,10 +4,11 @@ import './SearchBox.scss'
 const SearchBox = () => {
     const [value, setValue] = useState('')
     const SearchFetch = () => {
-        fetch(`https://api.themoviedb.org/3/search/multi?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&query=${value}&page=1&include_adult=false`)
+        fetch(`https://api.themoviedb.org/3/search/multi?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&query=$"aquaman"&page=1&include_adult=false`)
             .then(searchres => searchres.json())
-            .then()
+            .then(read => setValue(read.results))
     }
+    useEffect(() => SearchFetch(), [])
     const SearchChangeHandler = (e) => {
         setValue(e.target.value)
     }
