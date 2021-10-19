@@ -1,12 +1,12 @@
 .mainz__container{
     max-width: 100%;
     padding: 3rem 2rem 4rem;
-}
-.container-2{
     display: flex;
-    flex-direction: row;
+    // flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+}
+.container-2{
 }
 .categories{
     display: grid;

@@ -1,35 +1,24 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import '../../pages/Shows/tvshows.scss'
 import './SerResults.scss'
 import ImageMain from '../ImageMain/imagemain'
-import SeriesDetails from '../MovieRec1/movierec1'
 
-const SerResults = ({img, bckdrop, details, name, date }) => {
+const SerResults = () => {
+    const [series, setSeries] = useState([])
+    const SeriesDetFetcher = () => {
+        fetch('https://api.themoviedb.org/3/tv/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1')
+            .then(response => response.json())
+            .then(newresponse => setSeries(newresponse.results))
+    }
+    useEffect(() => SeriesDetFetcher(), [])
     return (
         <div className='ser__results'>
-            {/* <img src = {"https://image.tmdb.org/t/p/w500/" + bckdrop } className = 'bg-im' alt='/' /> */}
+            {
+                series.map(ser => <ImageMain key={ser.id.toString()} img={ser.poster_path} details={ser.overview} name={ser.name} date={ser.first_air_date} />)
+            }
             <div className='container-2'>
-                <ImageMain image={img}/>
-            </div>
-            <div className='categories'>
-                <div className="series__info">
-                    <h2> {name} </h2>
-                    <h5 className = 'h5'> <a href = '/'> { date } </a></h5>
-                    <h5 className = 'details'> { details }</h5>
-                    <div className='card-container'>
-                        <SeriesDetails/>
-                    </div>
-                </div>
-                <div className="series__no">
-                    <h3> No of Seasons </h3>
-                    <ul>
-                        <li>cd</li>
-                        <li>ab</li>
-                    </ul>
-                </div>
             </div>
         </div>
     )
 }
-
 export default SerResults

@@ -3,11 +3,11 @@
     font-size: 0.85rem;
     text-align: center;
     border-radius: 0.5rem;
-    border: 3px solid #b9b9b9;
-    width: 12.8rem;
+    border: 5px solid #272727;
+    width: 13.2rem;
     margin-bottom: 1.5rem;    
     margin-right: .8rem;
-    background-color: #fffcf2;
+    background-color: #272727;
     color: orange;
     a{
         color: orange;
@@ -24,8 +24,13 @@
 }
 .seriescard{
     width: 12.8rem;
-    // padding: 1rem;
     img {
+        height: 19.2rem;
+        border-radius: .5rem;
+        border-top: 1.5px solid white;
+        border-bottom: 1.5px solid white;
+        border-left: 1.5px solid white;
+        border-right: 1.5px solid white;
         border-radius: 0.4rem;
         width: 12.8rem;
         height: 19.2rem;

@@ -1,10 +1,10 @@
 import React from 'react';
 import './imagemain.scss'
 
-const ImageMain = ({image})=> {
+const ImageMain = ({img})=> {
 
     return (
-        <img src = {"https://image.tmdb.org/t/p/w500/" + image} className='img_container-1' alt='/' />
+        <img src = {"https://image.tmdb.org/t/p/w500/" + img } className='img_container-1' alt='/' />
         );
     }
         

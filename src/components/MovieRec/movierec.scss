@@ -1,9 +1,10 @@
 .movie-card{
-    width: 19.5rem;
+    width: 19.8rem;
     font-size: 14px;
     text-align: center;
     margin: 0 0 1.3rem;
-    border: 3px solid #e1e1e1;
+    border: 3px solid #272727;
+    border-top: 3.3px solid #272727;
     border-radius: 0.5rem ;
     background-color: #272727;
     color: orange ;
@@ -18,4 +19,9 @@
 .moviereccard{
     width: 19.5rem;
     height: 28.2rem;
+    border-radius: .5rem;
+    border-top: 2px solid white;
+    border-bottom: 1.5px solid white;
+    border-left: 1.5px solid white;
+    border-right: 1.5px solid white;
 }
