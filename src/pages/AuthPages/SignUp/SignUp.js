@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './SignUp.scss'
+import {useAuth0} from '@auth0/auth0-react'
 
-const SignUp = () => (
+const SignUp = () => {
+    const {loginWithRedirect} = useAuth0()
+    return (
     <div className='signup'>
         <div className = 'signUp-container'>
             <div className='terms'>
@@ -59,12 +62,14 @@ const SignUp = () => (
                 <p className = 'term-agr'>
                     By clicking the "Sign Up" button below, I certify that i have read and agreed to the <span> ChillfliX </span> terms of use and privacy policy.
                 </p>
-                <div className='btn-sign'>
-                    <Link to='/'> Sign Up </Link>
-                </div>
+                <button className='btn-sign' onClick={() => loginWithRedirect()} >
+                     Sign Up
+                </button>
             </section>
         </div>
     </div>
-)
+        
+    )
+}
 
 export default SignUp

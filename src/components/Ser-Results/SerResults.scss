@@ -1,6 +1,6 @@
 .ser__results{
     display: grid;
-    grid-template-columns: 1.5fr 4fr;
+    grid-template-columns: 1.5fr 4.2fr;
     margin-top: 2rem;
 }
 .sorted-shows{
@@ -11,10 +11,23 @@
 }
 .show-sorters{
     width: 16.125rem;
-    // background-color: white;
-    // height: 50px;
-    // display: flex;
+    text-align: left;
     align-items: center;
     margin-left: 2rem;
-    padding-left:1rem ;
+    padding-left:.3rem ;
+    .accd{
+        background-color: #272727;
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+        color: white;
+        li{
+            padding: 0.5rem 0;
+            :hover{
+                color: blue;
+            }
+            a{
+                color: white;
+                
+            }
+        }
+    }
 }

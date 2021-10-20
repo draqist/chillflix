@@ -10,29 +10,41 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import { ThemeProvider } from '@mui/material/styles';
 import { createTheme } from '@mui/material/styles';
-import moment from 'moment'
+import {Link} from 'react-router-dom'
+
 
 const SerResults = () => {
     const [series, setSeries] = useState([])
+    const [apifetch, setApiFetch] = useState('popular')
+    const [expanded, setExpanded] = useState(false);
     const SeriesDetFetcher = () => {
-        fetch('https://api.themoviedb.org/3/tv/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1')
+        fetch(`https://api.themoviedb.org/3/tv/${apifetch}?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1`)
             .then(response => response.json())
             .then(newresponse => setSeries(newresponse.results))
     }
-    useEffect(() => SeriesDetFetcher(), [])
+    useEffect(() => SeriesDetFetcher())
     const theme = createTheme({
         typography: {
-            fontFamily: 'Montserrat'
+            fontFamily: 'Montserrat',
         },
-});
+    });
+    
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
+    const ApiFetcher = (val) => {
+        setApiFetch(val)
+    }
     return (
         <div className='ser__results'>
             <GlobalStyles styles={{ fontFamily: 'Montserrat' }} />
             <div className='show-sorters'>
                 <ThemeProvider theme = {theme}>
-                    <Accordion>
+                    <Accordion className = 'accd' expanded={expanded === 'panel'} onChange={handleChange('panel')}>
                         <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
+                            expandIcon={<ExpandMoreIcon style={{color: 'white'}}/>}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                         >
@@ -40,13 +52,18 @@ const SerResults = () => {
                         </AccordionSummary>
                         <AccordionDetails>
                         <Typography>
-                            <li> Popularity Descending </li>
-                            <li>Popularity Ascending </li>
-                            <li>Rating Descending </li>
-                            <li>Rating Ascending </li>
-                            <li>Title (A-Z) </li>
-                            <li>Title (Z-1) </li>
-                            <li>Release Date </li>
+                            <li >
+                                <Link to = '/shows' onClick = {() => ApiFetcher('popular')} >Popularity</Link>
+                            </li>
+                            <li >
+                                <Link to = '/shows' onClick = {() => ApiFetcher('airing_today')} >Airing Today </Link>
+                            </li>
+                            <li > 
+                                <Link to = '/shows' onClick = {() => ApiFetcher('on_the_air')}>On TV</Link> 
+                            </li>
+                            <li >
+                                <Link to = '/shows' onClick = {() => ApiFetcher('top_rated')} >Top Rated </Link>
+                            </li>
                         </Typography>
                         </AccordionDetails>
                     </Accordion>
@@ -56,7 +73,6 @@ const SerResults = () => {
                     {
                         series.map(ser => <ImageMain key={ser.id.toString()} img={ser.poster_path} details={ser.overview} name={ser.name} date={ser.first_air_date.toString()} />)
                 }
-                <span> Lucifer </span>
             </div>
         </div>
     )
