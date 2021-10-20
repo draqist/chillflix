@@ -15,6 +15,7 @@
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "aos": "^2.3.4",
     "atropos": "^1.0.1",
+    "dayjs": "^1.10.7",
     "firebase": "^9.1.0",
     "framework7-react": "^6.3.5",
     "material-components-web": "^13.0.0",

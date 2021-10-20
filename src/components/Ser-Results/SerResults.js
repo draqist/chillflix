@@ -40,7 +40,13 @@ const SerResults = () => {
                         </AccordionSummary>
                         <AccordionDetails>
                         <Typography>
-                            <li>Google </li>
+                            <li> Popularity Descending </li>
+                            <li>Popularity Ascending </li>
+                            <li>Rating Descending </li>
+                            <li>Rating Ascending </li>
+                            <li>Title (A-Z) </li>
+                            <li>Title (Z-1) </li>
+                            <li>Release Date </li>
                         </Typography>
                         </AccordionDetails>
                     </Accordion>
