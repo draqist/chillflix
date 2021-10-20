@@ -1,5 +1,20 @@
 .ser__results{
+    display: grid;
+    grid-template-columns: 1.5fr 4fr;
+    margin-top: 2rem;
+}
+.sorted-shows{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+.show-sorters{
+    width: 16.125rem;
+    // background-color: white;
+    // height: 50px;
     // display: flex;
-    margin: 0 0 .8rem;
-    background-color: white;
+    align-items: center;
+    margin-left: 2rem;
+    padding-left:1rem ;
 }

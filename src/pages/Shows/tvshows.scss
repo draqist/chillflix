@@ -1,28 +1,5 @@
 .mainz__container{
-    max-width: 100%;
-    padding: 3rem 2rem 4rem;
     display: flex;
-    // flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
 }
-.container-2{
-}
-.categories{
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    .series__no{
-        width: 100%;
-        margin: 0 .8rem;
-    }
-    .series__info{
-        width: 100%;
-        text-align: justify;
-        letter-spacing: 2;
 
-    }
-}
-.card-container{
-    display: flex;
-    align-content: space-between;
- }
