@@ -39,5 +39,6 @@ background: linear-gradient(to left, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Fi
   --bg-clr: #232B42;
 }
 .main__body{
-  max-width: 100%;
+  width: 100%;
+  overflow: none;
 }

@@ -1,8 +1,12 @@
 import React from 'react';
 import './movierec.scss'
-const MovieRec = ({name, imageUrl}) => {
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+const MovieRec = ({ name, imageUrl }) => {
+    AOS.init()
     return (
-        <div className = 'shadow-3dp movie-card'>
+        <div className = 'shadow-3dp movie-card' data-aos = "zoom-in-up" data-aos-duration = '1150'>
             <div className = 'm-img'>
                 <img src={"https://image.tmdb.org/t/p/w500/" + imageUrl} className='moviereccard' alt= ''/>
             </div>

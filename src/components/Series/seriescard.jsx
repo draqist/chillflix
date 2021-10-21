@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './seriescard.scss'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const SeriesCard = ({ name, imageUrl }) => {
+    AOS.init()
     return (
-        <div className = 'shadow-3dp ser__container'>
+        <div className = 'shadow-3dp ser__container' data-aos = 'fade-down' data-aos-duration = '1250'>
             <div className = 'seriescard'>
                 <img src  = {"https://image.tmdb.org/t/p/w500/" + imageUrl} alt = ''/>
             </div>
