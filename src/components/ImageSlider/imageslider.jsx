@@ -1,9 +1,21 @@
 import React from 'react';
 import './imageslider.scss'
+import Slider from "react-slick";
 
-function ImageSlider (props) {
+function ImageSlider({ img }) {
+    const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
     return (
-        <div  className = 'img_container' />
+        // <Slider {...settings}>
+            <div className='imgcontainer' >
+                <img src = {"https://image.tmdb.org/t/p/w500/" + img} className = 'img_container'/>
+            </div>
+        // </Slider>
     );
 }
 

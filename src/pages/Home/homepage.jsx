@@ -7,15 +7,20 @@ import SeriesCard from '../../components/Series/seriescard';
 import MovieRec from '../../components/MovieRec/movierec';
 import { Movierectext, Movietext, Playlisttext } from '../../constants/constants'
 import SearchBox from '../../components/SearchBox/SearchBox';
+import Slider from "react-slick";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 
 
 function Homepage() {
+    AOS.init()
     const [genre, setGenre] = useState([])
     const [shows, setShows] = useState([])
     const [movieloaded, setMovieLoaded] = useState(false)
     const [seriesloaded, setSeriesLoaded] = useState(false)
     const [currentpage, setCurrentPage] = useState(1)
+    const [carousel, setCarousel] =  useState([])
 
     const movieGenreFetcher = () => {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=${currentpage}`)
@@ -33,8 +38,24 @@ function Homepage() {
                 setShows(newjson.results)
             })
     }
+    const CarouselData = () => {
+        fetch('https://api.themoviedb.org/3/trending/all/week?api_key=98750334fac1aaa94aca2b7a98d59728')
+            .then(r => r.json())
+            .then((newr) => {
+                setSeriesLoaded(true);
+                setCarousel(newr.results)
+            })
+    }
     useEffect(() => movieGenreFetcher(), [currentpage])
     useEffect(() => seriesGenreFetcher(), [])
+    useEffect(() => CarouselData(), [])
+    const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
 
     if (!movieloaded && !seriesloaded) {
         return (
@@ -62,10 +83,14 @@ function Homepage() {
     } else {
             return (
                 
-                <div className='main__container'>
+                <div className='main__container' >
                         <SearchBox/>
-                    <div className='container'>
-                        <ImageSlider />
+                    <div className='container' data-aos='fade' data-aos-duration='2000'>
+                        {/* <Slider {...settings}> */}
+                            {
+                                carousel.map((e) => (<ImageSlider key={e.id.toString()} img = {e.poster_path} />))
+                            }
+                        {/* </Slider> */}
                         <div className = 'movie__container'>
                             <MovieCard/>
                             <MovieCard/>

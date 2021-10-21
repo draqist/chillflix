@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.scss'
+import Brightness4Sharp from '@mui/icons-material/Brightness4Sharp'
+import TranslateSharpIcon from '@mui/icons-material/TranslateSharp';
 
 const Header = () => {
     return (
@@ -22,7 +24,10 @@ const Header = () => {
                         </li>
                     </ul>
             </nav>
-            <span> toggler</span>
+            <div style = {{display: 'flex'}}>
+                <span> <TranslateSharpIcon/>  </span>
+                <span> <Brightness4Sharp/> </span>
+            </div>
         </main>
     )
 }
