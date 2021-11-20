@@ -83,7 +83,6 @@ function Homepage() {
                         </div>
                         <div className = 'load_more'>
                             <a href='#series' onClick={() => setCurrentPage(cp => cp + 1)}> Load More </a>
-                            {console.log(currentpage)}
                         </div>
                     </div>
                 </div>

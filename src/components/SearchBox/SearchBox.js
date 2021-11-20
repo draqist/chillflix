@@ -2,8 +2,9 @@ import React, {useState, useEffect, useCallback} from 'react'
 import './SearchBox.scss'
 
 const SearchBox = () => {
-    const [value, setValue] = useState('')
-    const [searchresults, setSearchResults] = useState([])
+    const [value, setValue] = useState('a')
+  // const [searchresults, setSearchResults] = useState([])
+  // console.log(searchresults)
     const SearchChangeHandler = (e) => {
         setValue(e.target.value)
     }
@@ -13,13 +14,11 @@ const SearchBox = () => {
             .then(res => res.json())
             .then(searchres => {
                 if (searchres){
-                    console.log(searchres)
-                    setSearchResults(searchres.results)
-                    console.log(searchresults)
+                    // setSearchResults(searchres.results)
                 } 
         })
         },
-        [value, searchresults ],
+        [value],
     )
     useEffect(() => SearchFetch(), [SearchFetch])
     return (
