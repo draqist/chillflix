@@ -10,20 +10,12 @@ import 'aos/dist/aos.css'
 
 
 function Homepage() {
-     const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  };
     AOS.init()
     const [genre, setGenre] = useState([])
     const [shows, setShows] = useState([])
     const [movieloaded, setMovieLoaded] = useState(false)
     const [seriesloaded, setSeriesLoaded] = useState(false)
     const [currentpage, setCurrentPage] = useState(1)
-    const [carousel, setCarousel] =  useState([])
 
     const movieGenreFetcher = useCallback(
         () => {
@@ -52,7 +44,6 @@ function Homepage() {
             .then(r => r.json())
             .then((newr) => {
                 setSeriesLoaded(true);
-                setCarousel(newr.results)
             })
     }
     useEffect(() => movieGenreFetcher(), [movieGenreFetcher])
