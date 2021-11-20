@@ -1,19 +1,22 @@
-import React, {useEffect, useState} from 'react';
-import MovieCard from '../../components/MovieCard/moviecard';
-import ImageSlider from '../../components/ImageSlider/imageslider'
-import PlaylistCard from '../../components/Playlist/playlistcard';
+import React, {useEffect, useState, useCallback} from 'react';
 import './homepage.scss'
 import SeriesCard from '../../components/Series/seriescard';
 import MovieRec from '../../components/MovieRec/movierec';
-import { Movierectext, Movietext, Playlisttext } from '../../constants/constants'
+import { Movierectext, Movietext } from '../../constants/constants'
 import SearchBox from '../../components/SearchBox/SearchBox';
-import Slider from "react-slick";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 
 
 function Homepage() {
+     const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
     AOS.init()
     const [genre, setGenre] = useState([])
     const [shows, setShows] = useState([])
@@ -22,22 +25,28 @@ function Homepage() {
     const [currentpage, setCurrentPage] = useState(1)
     const [carousel, setCarousel] =  useState([])
 
-    const movieGenreFetcher = () => {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=${currentpage}`)
+    const movieGenreFetcher = useCallback(
+        () => {
+           fetch(`https://api.themoviedb.org/3/movie/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=${currentpage}`)
             .then(res => res.json())
             .then(json => {  
                 setMovieLoaded(true)
                 setGenre(json.results)
             })
-    }
-    const seriesGenreFetcher = () => {
-        fetch('https://api.themoviedb.org/3/tv/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1&language=en-US')
+        },
+        [currentpage],
+    )
+    const seriesGenreFetcher = useCallback(
+        () => {
+             fetch('https://api.themoviedb.org/3/tv/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1&language=en-US')
             .then(resp => resp.json())
             .then((newjson) => {
                 setSeriesLoaded(true);
                 setShows(newjson.results)
             })
-    }
+        },
+        [],
+    )
     const CarouselData = () => {
         fetch('https://api.themoviedb.org/3/trending/all/week?api_key=98750334fac1aaa94aca2b7a98d59728')
             .then(r => r.json())
@@ -46,33 +55,13 @@ function Homepage() {
                 setCarousel(newr.results)
             })
     }
-    useEffect(() => movieGenreFetcher(), [currentpage])
-    useEffect(() => seriesGenreFetcher(), [])
+    useEffect(() => movieGenreFetcher(), [movieGenreFetcher])
+    useEffect(() => seriesGenreFetcher(), [seriesGenreFetcher])
     useEffect(() => CarouselData(), [])
-    const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  };
 
     if (!movieloaded && !seriesloaded) {
         return (
             <div className = 'loader-container'>
-                {/* <div className="loader">Loading...</div> */}
-                {/* <div className="center">
-                    <div className="wave"></div>
-                    <div className="wave"></div>
-                    <div className="wave"></div>
-                    <div className="wave"></div>
-                    <div className="wave"></div>
-                    <div className="wave"></div>
-                    <div className="wave"></div>
-                    <div className="wave"></div>
-                    <div className="wave"></div>
-                    <div className="wave"></div>
-                </div> */}
                 <div className="loading">
                     <div className="arc"></div>
                     <div className="arc"></div>
@@ -85,25 +74,6 @@ function Homepage() {
                 
                 <div className='main__container' >
                         <SearchBox/>
-                    <div className='container' data-aos='fade' data-aos-duration='2000'>
-                        {/* <Slider {...settings}> */}
-                            {
-                                carousel.map((e) => (<ImageSlider key={e.id.toString()} img = {e.poster_path} />))
-                            }
-                        {/* </Slider> */}
-                        <div className = 'movie__container'>
-                            <MovieCard/>
-                            <MovieCard/>
-                            <MovieCard />
-                        </div>
-                    </div>
-                    <Playlisttext />
-                    <div className= 'playlistcontainer'>
-                        <PlaylistCard/>
-                        <PlaylistCard/>
-                        <PlaylistCard/>
-                        <PlaylistCard/>
-                    </div>
                     <div className = 'moviecard'>
                         <Movietext />
                         <div id = 'series'className = 'tvshows'>

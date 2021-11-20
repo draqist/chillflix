@@ -1,0 +1,11 @@
+.mov__results{
+    display: grid;
+    grid-template-columns: 1.5fr 4.2fr;
+    margin-top: 2rem;
+}
+.sorted-movies{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}

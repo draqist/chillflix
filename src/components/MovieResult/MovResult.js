@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import '../../pages/Shows/tvshows.scss'
-import './SerResults.scss'
+import './MovResult.scss'
 import ImageMain from '../ImageMain/imagemain'
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -13,20 +13,27 @@ import { createTheme } from '@mui/material/styles';
 import {Link} from 'react-router-dom'
 
 
-const SerResults = () => {
-    const [series, setSeries] = useState([])
+const MovResults = () => {
+    const handleChange = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
+    const [movies, setMovies] = useState([])
     const [apifetch, setApiFetch] = useState('popular')
     const [expanded, setExpanded] = useState(false);
     const [loaded, setLoaded] = useState(false)
-    const SeriesDetFetcher = useCallback( () => {
-        fetch(`https://api.themoviedb.org/3/tv/${apifetch}?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1`)
+    const MoviesDetFetcher = useCallback(
+        () => {
+            fetch(`https://api.themoviedb.org/3/movie/${apifetch}?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1`)
             .then(response => response.json())
             .then(newresponse => {
                 setLoaded(true)
-                setSeries(newresponse.results)
+                setMovies(newresponse.results)
+                console.log(movies)
             })
-    }, [apifetch])
-    useEffect(() => SeriesDetFetcher(), [SeriesDetFetcher])
+        },
+        [apifetch,movies],
+    )
+    useEffect(() => MoviesDetFetcher(), [MoviesDetFetcher])
     const theme = createTheme({
         typography: {
             fontFamily: 'Montserrat',
@@ -34,9 +41,6 @@ const SerResults = () => {
     });
     
 
-    const handleChange = (panel) => (event, isExpanded) => {
-        setExpanded(isExpanded ? panel : false);
-    };
 
     const ApiFetcher = (val) => {
         setApiFetch(val)
@@ -52,11 +56,11 @@ const SerResults = () => {
     } else {
         
         return (
-            <div className='ser__results'>
+            <div className='mov__results'>
                 <GlobalStyles styles={{ fontFamily: 'Montserrat' }} />
-                <div className='show-sorters'>
+                <div className='movie-sorters'>
                     <ThemeProvider theme={theme}>
-                        <Accordion className='accd' expanded={expanded === 'panel'} onChange={handleChange('panel')}>
+                        <Accordion className='mov-accd' expanded={expanded === 'panel'} onChange={handleChange('panel')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon style={{ color: 'white' }} />}
                                 aria-controls="panel1a-content"
@@ -67,27 +71,27 @@ const SerResults = () => {
                             <AccordionDetails>
                                 <Typography>
                                     <li >
-                                        <Link to='/shows' onClick={() => ApiFetcher('popular')} >Popularity</Link>
+                                        <Link to='/movies' onClick={() => ApiFetcher('popular')} >Popularity</Link>
                                     </li>
                                     <li >
-                                        <Link to='/shows' onClick={() => ApiFetcher('airing_today')} >Airing Today </Link>
+                                        <Link to='/movies' onClick={() => ApiFetcher('now_playing')} >Now Playing</Link>
                                     </li>
                                     <li >
-                                        <Link to='/shows' onClick={() => ApiFetcher('on_the_air')}>On TV</Link>
+                                        <Link to='/movies' onClick={() => ApiFetcher('upcoming')}>Upcoming</Link>
                                     </li>
                                     <li >
-                                        <Link to='/shows' onClick={() => ApiFetcher('top_rated')} >Top Rated </Link>
+                                        <Link to='/movies' onClick={() => ApiFetcher('top_rated')} >Top Rated </Link>
                                     </li>
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
                     </ThemeProvider>
                 </div>
-                <div style = {{width: '100%'}}>
-                    <div className='sorted-shows'>
-                        {
-                            series.map(ser => <ImageMain key={ser.id.toString()} img={ser.poster_path} details={ser.overview} name={ser.name} date={ser.first_air_date.toString()} />)
-                        }
+                <div style = {{width: '100%',}}>
+                    <div className='sorted-movies'>
+                    {
+                        movies.map(mov => <ImageMain key = {mov.id.toString()} name = {mov.title} details = {mov.overview} date = {mov.release_date.toString()} img = {mov.poster_path} />)
+                    }
                     </div>
                     <div className='load_more1'>
                         <a href='#series'> Load More </a>
@@ -97,4 +101,4 @@ const SerResults = () => {
         )
     }
 }
-export default SerResults
+export default MovResults

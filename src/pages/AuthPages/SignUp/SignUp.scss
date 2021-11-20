@@ -22,7 +22,7 @@
 .auth1form{
     // display: grid;
     input{
-        width: 60.8rem;
+        width: 80%;
         height: 2.25rem;
         border-radius: 0.5rem;
         outline: none;
@@ -30,6 +30,7 @@
         justify-content: center;
         padding: 0 0.8rem;
         font-size: 13px;
+        border: none;
     }
 }
 .sign-ul{
@@ -65,8 +66,8 @@
     li{
     margin: 0;
     font-size: 1rem;
-    padding: 1rem 20px;
-    line-height: 1.4rem;
+    padding: 1rem 15px;
+    line-height: 1.3rem;
     white-space: normal;
 
     }
@@ -80,6 +81,7 @@
     font-weight: 600;
     margin: 1rem 0;
     display: inline-block;
+    border: none;
 }
 .term-agr{
     span{

@@ -1,19 +1,4 @@
 .moviepage{
-    color: white;
-    header{
-        height: 32rem;
-        width: 100%;
-        .mov-img{
-            img{
-                width: 18.75rem;
-            }
-            .mov-img-details{
-                .creators{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-            }
-        }
-    }
+    display: flex;
+    flex-wrap: wrap;
 }

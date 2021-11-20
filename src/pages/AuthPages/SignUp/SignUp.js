@@ -1,9 +1,39 @@
-import React from 'react'
+import React, { useState, } from 'react'
+import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth'
+import {auth} from '../../../firebase'
 import './SignUp.scss'
-import {useAuth0} from '@auth0/auth0-react'
+import { useHistory } from 'react-router'
 
 const SignUp = () => {
-    const {loginWithRedirect} = useAuth0()
+  let history = useHistory()
+    const [error, setError] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+  const [passwordconfirm, setPasswordConfirm] = useState('')
+
+  const redirect = () => {
+    history.replace('/')
+  }
+  const handleSignUp = async () => {
+    console.log(error)
+        try {
+
+        if (password !== passwordconfirm) {
+            return setError('Passwords do not match')
+        }
+        if (password.length <= 7) {
+            return setError('Password is too short')
+            }
+            let res = await createUserWithEmailAndPassword(auth, email, password)
+            if (res) {
+                redirect()
+                await sendEmailVerification(auth.currentUser)
+                }
+        } catch (error) {
+            console.log(error.message)
+            setError(error.message)
+        }
+}
     return (
     <div className='signup'>
         <div className = 'signUp-container'>
@@ -46,22 +76,22 @@ const SignUp = () => {
                     </h4>
                     <input type='text' />
                     <h4>
+                        Email
+                    </h4>
+                    <input type='email' value = {email} onChange = {(e) => setEmail(e.target.value)} />
+                    <h4>
                         Password (4 characters minimum)
                     </h4>
-                    <input type='password' />
+                    <input type='password' value = {password} onChange = {(e) => setPassword(e.target.value)} />
                     <h4>
                         Confirm Password
                     </h4>
-                    <input type='password' />
-                    <h4>
-                        Email
-                    </h4>
-                    <input type='email' />
+              <input type='password' value={ passwordconfirm} onChange = {(e) => setPasswordConfirm(e.target.value)}/>
                 </div>
                 <p className = 'term-agr'>
                     By clicking the "Sign Up" button below, I certify that i have read and agreed to the <span> ChillfliX </span> terms of use and privacy policy.
                 </p>
-                <button className='btn-sign' onClick={() => loginWithRedirect()} >
+                <button className='btn-sign' onSubmit = {handleSignUp} >
                      Sign Up
                 </button>
             </section>

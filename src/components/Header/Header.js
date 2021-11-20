@@ -11,7 +11,7 @@ const Header = () => {
             <nav className='nav-1'>
                     <ul className = 'header-ul'>
                         <li>
-                            <Link to = '/search'> Movies</Link>
+                            <Link to = '/movies'> Movies</Link>
                         </li>
                         <li>
                             <Link to = '/shows'> TV Shows</Link>
