@@ -36,7 +36,6 @@
     transform: rotate(360deg);
   }
 }
-
 .loading {
   position: relative;
   width: 4rem;
@@ -44,7 +43,6 @@
   transform-style: preserve-3d;
   perspective: 400px;
   margin: auto auto;
-
   .arc {
     position: absolute;
     content: "";
@@ -54,47 +52,38 @@
     height: 100%;
     border-radius: 50%;
     border-bottom: 3px solid white;
-
     @for $i from 1 through 3 {
       &:nth-child(#{$i}) {
         animation: rotate#{$i} 1.15s linear infinite;
       }
     }
-
     &:nth-child(1) {
       animation-delay: -0.8s;
     }
-
     &:nth-child(2) {
       animation-delay: -0.4s;
     }
-
     &:nth-child(3) {
       animation-delay: 0s;
     }
   }
 }
-
 @keyframes rotate1 {
   from {
     transform: rotateX(35deg) rotateY(-45deg) rotateZ(0);
   }
-
   to {
     transform: rotateX(35deg) rotateY(-45deg) rotateZ(1turn);
   }
 }
-
 @keyframes rotate2 {
   from {
     transform: rotateX(50deg) rotateY(10deg) rotateZ(0);
   }
-
   to {
     transform: rotateX(50deg) rotateY(10deg) rotateZ(1turn);
   }
 }
-
 @keyframes rotate3 {
   from {
     transform: rotateX(35deg) rotateY(55deg) rotateZ(0);
@@ -104,8 +93,6 @@
     transform: rotateX(35deg) rotateY(55deg) rotateZ(1turn);
   }
 }
-
-
 .main__container {
     padding: 0 1.5rem;
     @media screen and (max-width: 790px) {
@@ -162,21 +149,17 @@
 .tvshows::-webkit-scrollbar {
   width: 7px;
 }
-
 .tvshows ::-webkit-scrollbar-track {
   background-color: transparent;
 }
-
 .tvshows ::-webkit-scrollbar-thumb {
   background-color: #d6dee1;
   border-radius: 20px;
   border: 6px solid transparent;
 }
-
 .tvshows ::-webkit-scrollbar-thumb:hover {
   background-color: #a8bbbf;
 }
-
 .load_more{
   @media screen and (max-width: 790px) {
       padding: 1rem 2rem 0rem;
