@@ -11,7 +11,7 @@ const Header = () => {
   const [nav, setNav] = useState(false)
     return (
         <main className = 'header shadow-4dp'> 
-                <Link to = '/'><span> Chillfli<span className = 'fiery'>X</span> </span> </Link>
+                <Link to = '/'><span> Flee<span className = 'fiery'>X</span> </span> </Link>
             <nav className='nav-1'>
                     <ul className = 'header-ul'>
                         <li>
