@@ -39,16 +39,9 @@ function Homepage() {
         },
         [],
     )
-    const CarouselData = () => {
-        fetch('https://api.themoviedb.org/3/trending/all/week?api_key=98750334fac1aaa94aca2b7a98d59728')
-            .then(r => r.json())
-            .then((newr) => {
-                setSeriesLoaded(true);
-            })
-    }
+
     useEffect(() => movieGenreFetcher(), [movieGenreFetcher])
     useEffect(() => seriesGenreFetcher(), [seriesGenreFetcher])
-    useEffect(() => CarouselData(), [])
 
     if (!movieloaded && !seriesloaded) {
         return (

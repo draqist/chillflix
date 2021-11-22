@@ -96,24 +96,7 @@
       padding: 0 1rem;
     }
 }
-.text{
-  text-align: right;
-}
-.container{
-    display: grid;
-    grid-template-columns: 9fr 1fr;
-    justify-content: space-between;
-}
-.movie__container{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    justify-content: space-between;
-}
-.playlistcontainer{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-content: space-between;
-}
+
 .moviecard{
     margin: 3rem 0rem 0rem;
 }
