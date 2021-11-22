@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useCallback} from 'react'
-import '../../pages/Shows/tvshows.scss'
 import './MovResult.scss'
 import ImageMain from '../ImageMain/imagemain'
 import Accordion from '@mui/material/Accordion';
