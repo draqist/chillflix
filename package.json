@@ -16,7 +16,6 @@
     "@testing-library/user-event": "^12.1.10",
     "aos": "^2.3.4",
     "dayjs": "^1.10.7",
-    "firebase": "^9.1.0",
     "framer-motion": "4.1.17",
     "gsap": "^3.8.0",
     "moment": "^2.29.1",
