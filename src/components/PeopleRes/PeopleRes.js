@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useCallback} from 'react'
-import '../../pages/Shows/tvshows.scss'
 import './PeopleRes.scss'
 import ImageMain from '../ImageMain/imagemain'
 
