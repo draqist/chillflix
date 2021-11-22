@@ -5,7 +5,7 @@ import MovResults from '../../components/MovieResult/MovResult'
 
 const MoviesPage = () => {
     return (
-        <div className='moviepage'>
+        <div>
             <MovResults/>
         </div>
     )

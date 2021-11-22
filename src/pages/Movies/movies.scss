@@ -1,4 +1,8 @@
 .moviepage{
     display: flex;
     flex-wrap: wrap;
+     @media screen and (max-width: 790px) {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+    }
 }

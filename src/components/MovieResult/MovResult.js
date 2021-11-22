@@ -28,10 +28,9 @@ const MovResults = () => {
             .then(newresponse => {
                 setLoaded(true)
                 setMovies(newresponse.results)
-                console.log(movies)
             })
         },
-        [apifetch,movies],
+        [apifetch,],
     )
     useEffect(() => MoviesDetFetcher(), [MoviesDetFetcher])
     const theme = createTheme({
@@ -56,6 +55,7 @@ const MovResults = () => {
     } else {
         
         return (
+          <div className = 'moviepage'>
             <div className='mov__results'>
                 <GlobalStyles styles={{ fontFamily: 'Montserrat' }} />
                 <div className='movie-sorters'>
@@ -87,7 +87,7 @@ const MovResults = () => {
                         </Accordion>
                     </ThemeProvider>
                 </div>
-                <div style = {{width: '100%',}}>
+              <div className = 'main-movies'>
                     <div className='sorted-movies'>
                     {
                         movies.map(mov => <ImageMain key = {mov.id.toString()} name = {mov.title} details = {mov.overview} date = {mov.release_date.toString()} img = {mov.poster_path} />)
@@ -98,6 +98,7 @@ const MovResults = () => {
                     </div>
                 </div>
             </div>
+          </div>
         )
     }
 }

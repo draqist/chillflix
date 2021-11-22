@@ -1,21 +1,36 @@
-.mov__results{
+.moviepage{
+  display: flex;
+  flex-wrap: wrap;
+  .mov__results{
     display: flex;
     justify-content: space-evenly;
-    // grid-template-columns: 1.5fr 4.2fr;
     margin-top: 2rem;
+    @media screen and (max-width: 790px) {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+      }
 }
-.sorted-movies{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    
+.main-movies{
+  .sorted-movies{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content:center;
+      @media screen and (max-width: 790px) {
+        margin-top: 2rem;
+        align-items: center;
+      }
+  }
 }
 .movie-sorters{
-    width: 16.125rem;
+    width: 100%;
     text-align: left;
     align-items: center;
-    margin-left: 2rem;
-    padding-left:.3rem ;
+    margin: 0 1rem;
+    @media screen and (max-width: 790px) {
+        width: 90%;
+      }
     .mov-accd{
         background-color: #272727;
         box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
@@ -23,7 +38,7 @@
         li{
             padding: 0.5rem 0;
             :hover{
-                color: blue;
+                color: orange;
             }
             a{
                 color: white;
@@ -36,7 +51,7 @@
 
   justify-content: center;
   align-items: center;
-  // display: flex;
+  display: flex;
   margin: 0 8px;
   a{
     display: flex;
@@ -54,4 +69,6 @@
     background-color: rgb(0, 82, 163);
     color: floralwhite;
   }
+}
+
 }

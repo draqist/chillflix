@@ -1,39 +1,10 @@
 import React, { useState, } from 'react'
-// import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth'
-import {auth} from '../../../firebase'
 import './SignUp.scss'
-import { useHistory } from 'react-router'
 
 const SignUp = () => {
-  let history = useHistory()
-    const [error, setError] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [passwordconfirm, setPasswordConfirm] = useState('')
-
-  const redirect = () => {
-    history.replace('/')
-  }
-//   const handleSignUp = async () => {
-//     console.log(error)
-//         try {
-
-//         if (password !== passwordconfirm) {
-//             return setError('Passwords do not match')
-//         }
-//         if (password.length <= 7) {
-//             return setError('Password is too short')
-//             }
-//             let res = await createUserWithEmailAndPassword(auth, email, password)
-//             if (res) {
-//                 redirect()
-//                 await sendEmailVerification(auth.currentUser)
-//                 }
-//         } catch (error) {
-//             console.log(error.message)
-//             setError(error.message)
-//         }
-// }
     return (
     <div className='signup'>
         <div className = 'signUp-container'>
@@ -70,7 +41,8 @@ const SignUp = () => {
             <section className='AuthForms'>
                 <h2> Sign up for an account </h2>
                 <span> Signing up for an account is free and easy, Fill out the form below to get started.</span>
-                <div className='auth1form'>
+            <div className='auth1form'>
+              <form>
                     <h4>
                         Username
                     </h4>
@@ -87,13 +59,12 @@ const SignUp = () => {
                         Confirm Password
                     </h4>
               <input type='password' value={ passwordconfirm} onChange = {(e) => setPasswordConfirm(e.target.value)}/>
+              </form>
                 </div>
                 <p className = 'term-agr'>
                     By clicking the "Sign Up" button below, I certify that i have read and agreed to the <span> ChillfliX </span> terms of use and privacy policy.
                 </p>
-                <button className='btn-sign'>
-                     Sign Up
-                </button>
+                <button className='btn-sign'>Sign Up</button>
             </section>
         </div>
     </div>

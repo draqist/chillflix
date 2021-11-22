@@ -6,9 +6,8 @@
     height: 3rem;
     background-color: #272727;
     align-items: center;
-    // margin-bottom: 2rem;
     justify-content: space-between;
-    padding-right: 2rem;
+    padding: 0 1rem;
     span{
         display: flex;
         align-items: center;
@@ -26,24 +25,101 @@
             padding: 0;
             display: flex;
             align-items: center;
-    
+        }
+        @media screen and (max-width: 790px) {
+          font-size: 20px;
+          .fiery{
+              font-size: 2rem;
+              padding-left: 2px;
+          }
         }
     }
 }
 .nav-1{
     display: flex;
-    flex-grow: 1.5;
-    margin-left: 2rem;
+    margin: 0 auto;
+    @media screen and (max-width: 790px) {
+      display: none;
+    }
 }
 .header-ul{
     display: flex;
     justify-content: space-between;
     li{
-        padding: 0 2rem;
-        margin-left: 2rem;
+        padding: 0 4rem;
+        @media screen and (min-width: 791px) and (max-width: 1024px){
+          padding: 0 2rem;
+        }
         a{
             color: #e1e1e1;
-            font-weight: bold;
         }
     }
+}
+@media screen and (max-width: 790px) {
+  .drp_menu{
+  width: 100%;
+  height:100%;
+  background-color: white;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  h1{
+  font-weight: 400;
+  }
+}
+}
+.header-btn-desk{
+  display: flex;
+  .lights{
+      @media screen and (max-width: 790px) {
+          display: none;
+        }
+      .btn-s{
+        color: white ;
+        margin: 0 1rem;
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+        padding: 4px;
+        border-radius:50%;
+        
+      }
+    }
+    .btn-small1{
+  @media (max-width: 790px){
+        background-color: #333333;
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+        width: 32px;
+        height: 36px;
+        display: flex;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        padding-left: 4px;
+        z-index: 0;
+    }
+  @media (min-width: 791px){
+    display: none;
+  }
+}
+.toggle-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20px;
+    width: 26px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 1px;
+    box-sizing: border-box;
+    .toggle-button_line {
+    width: 18px;
+    height: 2px;
+    background: #fff;
+}
+}
 }

@@ -52,6 +52,7 @@ const SerResults = () => {
     } else {
         
         return (
+          <div className='mainz__container'>
             <div className='ser__results'>
                 <GlobalStyles styles={{ fontFamily: 'Montserrat' }} />
                 <div className='show-sorters'>
@@ -67,23 +68,23 @@ const SerResults = () => {
                             <AccordionDetails>
                                 <Typography>
                                     <li >
-                                        <Link to='/shows' onClick={() => ApiFetcher('popular')} >Popularity</Link>
+                                        <Link to='/series' onClick={() => ApiFetcher('popular')} >Popularity</Link>
                                     </li>
                                     <li >
-                                        <Link to='/shows' onClick={() => ApiFetcher('airing_today')} >Airing Today </Link>
+                                        <Link to='/series' onClick={() => ApiFetcher('airing_today')} >Airing Today </Link>
                                     </li>
                                     <li >
-                                        <Link to='/shows' onClick={() => ApiFetcher('on_the_air')}>On TV</Link>
+                                        <Link to='/series' onClick={() => ApiFetcher('on_the_air')}>On TV</Link>
                                     </li>
                                     <li >
-                                        <Link to='/shows' onClick={() => ApiFetcher('top_rated')} >Top Rated </Link>
+                                        <Link to='/series' onClick={() => ApiFetcher('top_rated')} >Top Rated </Link>
                                     </li>
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
                     </ThemeProvider>
                 </div>
-                <div style = {{width: '100%'}}>
+                <div className = 'main-shows'>
                     <div className='sorted-shows'>
                         {
                             series.map(ser => <ImageMain key={ser.id.toString()} img={ser.poster_path} details={ser.overview} name={ser.name} date={ser.first_air_date.toString()} />)
@@ -93,6 +94,7 @@ const SerResults = () => {
                         <a href='#series'> Load More </a>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }

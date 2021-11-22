@@ -1,26 +1,40 @@
 .signup{
     padding: 4rem 0;
     color: white;
+    // height: 100vh;
 }
 .signUp-container{
     display: flex ;
     padding: 0 2rem;
+    @media screen and (max-width: 790px){
+      padding: 0 1.25rem;
+    }
 }
 .terms{
     width: 16.125rem ;
     border-radius: 0.5rem;
     border: 2px solid white;
     margin: 0 0 1rem;
+    @media screen and (max-width: 790px){
+      display: none;
+    }
 }
 .AuthForms{
     padding-left:2rem;
+    @media screen and (max-width: 790px){
+      padding: 0;
+      text-align: center;
+    }
     h2{
         margin: 0;
         padding-bottom: 12px;
     }
 }
 .auth1form{
-    // display: grid;
+  text-align: left;
+  @media screen and (max-width: 790px){
+    margin: 2rem 0;
+    }
     input{
         width: 80%;
         height: 2.25rem;
@@ -31,6 +45,9 @@
         padding: 0 0.8rem;
         font-size: 13px;
         border: none;
+        @media screen and (max-width: 790px){
+          width: 90%;
+        }
     }
 }
 .sign-ul{
@@ -44,7 +61,7 @@
     background-color: #272727;
     border-bottom-right-radius: 0.3rem;
     border-bottom-left-radius: 0.3rem;
-
+    
 }
 .sign-li-1{
     h3{
@@ -84,6 +101,10 @@
     border: none;
 }
 .term-agr{
+  text-align:justify;
+  @media screen and (max-width: 790px){
+      margin-top: 2rem;
+    }
     span{
         color: #eb5b28;
         font-weight: 500;
