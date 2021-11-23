@@ -49,6 +49,9 @@
     }
   }
   .load_more1{
+    @media screen and (max-width: 790px) {
+      padding: 1rem 2rem 1rem;
+    }
   justify-content: center;
   align-items: center;
   display: flex;

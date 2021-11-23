@@ -1,10 +1,35 @@
 import React, { useState, } from 'react'
 import './SignUp.scss'
+import { signInWithPopup, sendEmailVerification, GoogleAuthProvider} from 'firebase/auth'
+import { auth } from '../../../firebase'
+import {useHistory} from 'react-router-dom'
 
 const SignUp = () => {
+  const history = useHistory()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordconfirm, setPasswordConfirm] = useState('')
+  const [error, setError] = useState('')
+  const googleProvider = new GoogleAuthProvider()
+
+  const redirect = () => {
+    history.replace('/')
+  }
+  const handleGoogleSignUp = async (redirect) => {
+        try {
+            let res = await signInWithPopup(auth, googleProvider)
+            console.log(res)
+            if (res) {
+                    redirect()
+                setError('Verification email has been sent to your email')
+                await sendEmailVerification(auth.currentUser)
+                }
+        } catch (error) {
+            console.log(error.message)
+            setError(error.message)
+        }
+    }
+  console.log(error)
     return (
     <div className='signup'>
         <div className = 'signUp-container'>
@@ -64,7 +89,7 @@ const SignUp = () => {
                 <p className = 'term-agr'>
                     By clicking the "Sign Up" button below, I certify that i have read and agreed to the <span> ChillfliX </span> terms of use and privacy policy.
                 </p>
-                <button className='btn-sign'>Sign Up</button>
+                <button className='btn-sign' onClick={() => handleGoogleSignUp(redirect)}>Sign Up</button>
             </section>
         </div>
     </div>
