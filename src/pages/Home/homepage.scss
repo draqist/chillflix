@@ -34,6 +34,31 @@
     }
   }
 }
+@keyframes rotate1 {
+  from {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0);
+  }
+  to {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(1turn);
+  }
+}
+@keyframes rotate2 {
+  from {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0);
+  }
+  to {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(1turn);
+  }
+}
+@keyframes rotate3 {
+  from {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0);
+  }
+
+  to {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(1turn);
+  }
+}
 .main__container {
     padding: 0 1.5rem;
     @media screen and (max-width: 790px) {
@@ -86,7 +111,7 @@
 }
 .load_more{
   @media screen and (max-width: 790px) {
-      padding: 1rem 2rem 0rem;
+      padding: 1rem 2rem 1rem;
     }
   a{
     background-color: rgb(21, 136, 252);

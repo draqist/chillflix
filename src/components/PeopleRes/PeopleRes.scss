@@ -1,11 +1,14 @@
 .mov__results{
-    display: grid;
-    grid-template-columns: 1.5fr 4.2fr;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content:space-around;
     margin-top: 2rem;
+    text-align: center;
+    margin-left: 1rem;
 }
 .sorted-movies{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    
 }

@@ -21,7 +21,7 @@ const Header = () => {
                             <Link to = '/series'> TV Shows</Link>
                         </li>
                         <li>
-                            <Link to = '/'> People </Link>
+                            <Link to = '/people'> People </Link>
                         </li>
                         <li>
                             <Link to = '/signup'> Login </Link>

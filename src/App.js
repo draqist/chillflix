@@ -18,13 +18,13 @@ function App() {
               <Header />
               <Switch>
                 <Route exact path = '/' component = {Homepage} />
-                  {/* <SearchBox/> */}
+                <Route path='/people' component={ PeopleRes }/>
                 <Route path = '/search' component = {SearchResults} />
                 <Route path = '/series' component = {SerResults} />
                 <Route path = '/movies' component = {MovResults} />
                 <Route path = '/signup' component = {SignUp} />
                 <Route path = '/auth2' component = {Onboard} />
-                <Route path = '/auth3' component = {PeopleRes} />
+                {/* <Route path = '/auth3' component = {PeopleRes} /> */}
             </Switch>
           </main>
         </div>
