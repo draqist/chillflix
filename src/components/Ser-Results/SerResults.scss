@@ -3,8 +3,9 @@
   flex-wrap: wrap;
   .ser__results{
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 2rem;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
     @media screen and (max-width: 790px) {
       display: flex;
       flex-direction: column;
@@ -25,12 +26,15 @@
   }
   }
   .show-sorters{
-    width: 100%;
+    width: 90%;
     text-align: left;
     align-items: center;
-    margin: 0 1rem;
+    margin: 2rem 1rem 2rem;
+    padding: 0 1rem;
      @media screen and (max-width: 790px) {
         width: 90%;
+        align-items: center;
+        margin: 2rem 1rem 1rem;
       }
     .accd{
         background-color: #272727;
