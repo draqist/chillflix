@@ -87,7 +87,7 @@ const SignUp = () => {
               </form>
                 </div>
                 <p className = 'term-agr'>
-                    By clicking the "Sign Up" button below, I certify that i have read and agreed to the <span> ChillfliX </span> terms of use and privacy policy.
+                    By clicking the Sign Up button below, I certify that i have read and agreed to the <span> ChillfliX </span> terms of use and privacy policy.
                 </p>
                 <button className='btn-sign' onClick={() => handleGoogleSignUp(redirect)}>Sign Up</button>
             </section>

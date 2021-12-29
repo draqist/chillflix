@@ -1,3 +1,4 @@
+import React from 'react'
 import Homepage from './pages/Home/homepage';
 import './App.scss';
 import Header from './components/Header/Header';

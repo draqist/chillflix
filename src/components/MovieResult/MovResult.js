@@ -1,4 +1,5 @@
-import React, {useState, useEffect, useCallback} from 'react'
+/* eslint-disable react/prop-types */
+import React, { useState, useEffect, useCallback } from 'react'
 import './MovResult.scss'
 import ImageMain from '../ImageMain/imagemain'
 import Accordion from '@mui/material/Accordion';
