@@ -39,7 +39,7 @@
     transform: rotateX(35deg) rotateY(-45deg) rotateZ(0);
   }
   to {
-    transform: rotateX(35deg) rotateY(-45deg) rotateZ(1turn);
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
   }
 }
 @keyframes rotate2 {
@@ -47,7 +47,7 @@
     transform: rotateX(50deg) rotateY(10deg) rotateZ(0);
   }
   to {
-    transform: rotateX(50deg) rotateY(10deg) rotateZ(1turn);
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
   }
 }
 @keyframes rotate3 {
@@ -56,7 +56,7 @@
   }
 
   to {
-    transform: rotateX(35deg) rotateY(55deg) rotateZ(1turn);
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
   }
 }
 .main__container {
