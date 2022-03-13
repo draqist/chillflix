@@ -4,7 +4,7 @@
   .ser__results{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 2rem;
+    margin-top: 4rem;
     @media screen and (max-width: 790px) {
       display: flex;
       flex-direction: column;
@@ -48,13 +48,13 @@
     }
   }
   .load_more1{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 1rem 8px;
     @media screen and (max-width: 790px) {
       padding: 1rem 2rem 1rem;
     }
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  margin: 0 8px;
   a{
     display: flex;
     background-color: rgb(21, 136, 252);

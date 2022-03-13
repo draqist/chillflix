@@ -4,44 +4,44 @@ import SeriesCard from '../../components/Series/seriescard';
 import MovieRec from '../../components/MovieRec/movierec';
 import { Movierectext, Movietext } from '../../constants/constants'
 import SearchBox from '../../components/SearchBox/SearchBox';
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import Axios from 'axios'
+
 
 
 
 function Homepage() {
-    AOS.init()
+  
     const [genre, setGenre] = useState([])
     const [shows, setShows] = useState([])
+    // const [mainshows, setMainShows] = useState([])
     const [movieloaded, setMovieLoaded] = useState(false)
     const [seriesloaded, setSeriesLoaded] = useState(false)
-    const [currentpage, setCurrentPage] = useState(1)
+    let [currentpage, setCurrentPage] = useState(1)
+    
+    const movieGenreFetcher = async () => {
+      try {
+        const result = await Axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=${currentpage}`).then(res => {
+          return res.data.results
+        })
+        setGenre([...genre, ...result])
+      } catch(error) {
+        console.log(error.message)
+      }
+    }
+    const seriesGenreFetcher = async () => {
+      try {
+        const result = await Axios.get('https://api.themoviedb.org/3/tv/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1&language=en-US').then(res => {
+          return res.data.results
+        })
+        setSeriesLoaded(true);
+        setShows(result)
+      } catch(error) {
+        console.log(error.message)
+      }
+    }
 
-    const movieGenreFetcher = useCallback(
-        () => {
-           fetch(`https://api.themoviedb.org/3/movie/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=${currentpage}`)
-            .then(res => res.json())
-            .then(json => {  
-                setMovieLoaded(true)
-                setGenre(json.results)
-            })
-        },
-        [currentpage],
-    )
-    const seriesGenreFetcher = useCallback(
-        () => {
-             fetch('https://api.themoviedb.org/3/tv/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1&language=en-US')
-            .then(resp => resp.json())
-            .then((newjson) => {
-                setSeriesLoaded(true);
-                setShows(newjson.results)
-            })
-        },
-        [],
-    )
-
-    useEffect(() => movieGenreFetcher(), [movieGenreFetcher])
-    useEffect(() => seriesGenreFetcher(), [seriesGenreFetcher])
+    useEffect(() => seriesGenreFetcher(), [])
+    useEffect(() => movieGenreFetcher(), [currentpage])
 
     if (!movieloaded && !seriesloaded) {
         return (
@@ -75,7 +75,12 @@ function Homepage() {
                             
                         </div>
                         <div className = 'load_more'>
-                            <a href='#series' onClick={() => setCurrentPage(cp => cp + 1)}> Load More </a>
+                    <button href='' onClick={(e) => {
+                      // e.preventDefault()
+                      setCurrentPage(currentpage++)
+                      console.log(currentpage)
+                    }
+                    }> Load More </button>
                         </div>
                     </div>
                 </div>

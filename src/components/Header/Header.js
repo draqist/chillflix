@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import './Header.scss'
-import Brightness4Sharp from '@mui/icons-material/Brightness4Sharp'
-import TranslateSharpIcon from '@mui/icons-material/TranslateSharp';
-import CloseSharpIcon from '@mui/icons-material/CloseSharp';
+import {TiAdjustBrightness} from 'react-icons/ti'
+import {AiOutlineCloseCircle} from 'react-icons/ai'
+import {SiGoogletranslate} from 'react-icons/si'
 import { motion } from 'framer-motion';
 
 
@@ -30,8 +30,12 @@ const Header = () => {
             </nav>
             <div className = 'header-btn-desk'>
           <div className='lights'>
-            <TranslateSharpIcon className='btn-s' />
-            <Brightness4Sharp className='btn-s' />
+            <motion.div  whileHover={{ scale: 1.25, color: '#000' }}>
+              <SiGoogletranslate className='btn-s' />
+            </motion.div>
+            <motion.div  whileHover={{scale: 1.25, rotate: 90, color: '#000' }}>
+              <TiAdjustBrightness className='btn-s' />
+            </motion.div>
           </div>
           <div className = 'btn-small1'>
             <button className="toggle-button" onClick = {()=> setNav(!nav)}>
@@ -48,7 +52,7 @@ const Header = () => {
           initial={{ y: -400, x: 400, opacity: 0 }}
         >
           <div>
-            <CloseSharpIcon onClick={() => setNav(!nav)} />
+            <AiOutlineCloseCircle onClick={() => setNav(!nav)} />
             <motion.h1 whileHover = {{scale: 2, color: '#000'}} onClick={() => setNav(!nav)}>
               <Link to='/'>Home</Link>
             </motion.h1>

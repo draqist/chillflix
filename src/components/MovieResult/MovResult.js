@@ -2,25 +2,18 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import './MovResult.scss'
 import ImageMain from '../ImageMain/imagemain'
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import { ThemeProvider } from '@mui/material/styles';
-import { createTheme } from '@mui/material/styles';
+import '../Accordion/accord.scss'
 import {Link} from 'react-router-dom'
+import Collapsible from 'react-collapsible';
 
 
 const MovResults = () => {
-    const handleChange = (panel) => (event, isExpanded) => {
-        setExpanded(isExpanded ? panel : false);
-    };
+
     const [movies, setMovies] = useState([])
     const [apifetch, setApiFetch] = useState('popular')
-    const [expanded, setExpanded] = useState(false);
     const [loaded, setLoaded] = useState(false)
+    
+  
     const MoviesDetFetcher = useCallback(
         () => {
             fetch(`https://api.themoviedb.org/3/movie/${apifetch}?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1`)
@@ -33,14 +26,7 @@ const MovResults = () => {
         [apifetch,],
     )
     useEffect(() => MoviesDetFetcher(), [MoviesDetFetcher])
-    const theme = createTheme({
-        typography: {
-            fontFamily: 'Montserrat',
-        },
-    });
     
-
-
     const ApiFetcher = (val) => {
         setApiFetch(val)
     }
@@ -56,37 +42,23 @@ const MovResults = () => {
         
         return (
           <div className = 'moviepage'>
-            <div className='mov__results'>
-                <GlobalStyles styles={{ fontFamily: 'Montserrat' }} />
-                <div className='movie-sorters'>
-                    <ThemeProvider theme={theme}>
-                        <Accordion className='mov-accd' expanded={expanded === 'panel'} onChange={handleChange('panel')}>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{ color: 'white' }} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                            >
-                                <Typography>Sort Results By</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    <li >
-                                        <Link to='/movies' onClick={() => ApiFetcher('popular')} >Popularity</Link>
-                                    </li>
-                                    <li >
-                                        <Link to='/movies' onClick={() => ApiFetcher('now_playing')} >Now Playing</Link>
-                                    </li>
-                                    <li >
-                                        <Link to='/movies' onClick={() => ApiFetcher('upcoming')}>Upcoming</Link>
-                                    </li>
-                                    <li >
-                                        <Link to='/movies' onClick={() => ApiFetcher('top_rated')} >Top Rated </Link>
-                                    </li>
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </ThemeProvider>
-                </div>
+            <div className='mov_results'>
+              <div className='movie-sorters'>
+                <Collapsible trigger="Sort Results By" triggerTagName='div' className = 'accordion'>
+                  <li >
+                      <Link to='/movies' onClick={() => ApiFetcher('popular')} >Popularity</Link>
+                  </li>
+                  <li >
+                      <Link to='/movies' onClick={() => ApiFetcher('now_playing')} >Now Playing</Link>
+                  </li>
+                  <li >
+                      <Link to='/movies' onClick={() => ApiFetcher('upcoming')}>Upcoming</Link>
+                  </li>
+                  <li >
+                      <Link to='/movies' onClick={() => ApiFetcher('top_rated')} >Top Rated </Link>
+                  </li>
+                </Collapsible>
+              </div>
               <div className = 'main-movies'>
                     <div className='sorted-movies'>
                     {

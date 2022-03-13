@@ -3,7 +3,7 @@ import './Detailscard.scss'
 
 const DetailsCard = () => {
     return (
-        <div className = 'detailsCont' />
+        <div className = 'detailsCont' ></div>
     )
 }
 

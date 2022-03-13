@@ -18,7 +18,6 @@ const PeopleRes = () => {
     },
     [],
     )
-    console.log(people)
     useEffect(() => PeopleDetFetcher(), [PeopleDetFetcher])
 
     if (!loaded) {
@@ -34,7 +33,7 @@ const PeopleRes = () => {
         return (
             <div className='mov__results'>
             {
-              people.map(mov => <Main key={mov.id.toString()} name={mov.name} details={mov.known_for_department} date={null}img = {mov.profile_path} />)
+              people.map(mov => <Main key={mov.id.toString()} name={mov.name} img = {mov.profile_path} />)
                 }
             </div>
         )
