@@ -75,10 +75,8 @@ function Homepage() {
                             
                         </div>
                         <div className = 'load_more'>
-                    <button href='' onClick={(e) => {
-                      // e.preventDefault()
+                    <button href='' onClick={() => {
                       setCurrentPage(currentpage++)
-                      console.log(currentpage)
                     }
                     }> Load More </button>
                         </div>

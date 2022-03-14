@@ -32,11 +32,13 @@ const MovResults = () => {
     }
     if (!loaded) {
         return (
+          <div className='loader-container'>
             <div className="loading">
                 <div className="arc"></div>
                 <div className="arc"></div>
                 <div className="arc"></div>
             </div>
+        </div>
         )
     } else {
         
